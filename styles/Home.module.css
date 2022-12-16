@@ -1,7 +1,5 @@
 /* css files with `.module` will only apply to a specific route. */
-/* the file css file can be imported into the .tsx file it pertains to, like below: */
-/* import styles from './Home.module.css' */
-/* The styles are then referenced as if the were a js object, example: <div className={styles.container}></div> */
+/* the file css file can be imported into the .tsx file it pertains to, which is this eg is index.tsx */
 
 .main {
   display: flex;
