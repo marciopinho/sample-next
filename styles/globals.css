@@ -1,3 +1,5 @@
+/* unlike .module css files, this styleshet applies globally */
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
