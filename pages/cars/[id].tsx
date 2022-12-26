@@ -31,7 +31,7 @@ export default function Car({ car }: { car: Car }) {
 
 // note that the function is async.
 // the keyword await is used to wait for the fetch to complete.
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: { params: unknown }) {
   const req = await fetch(`http://localhost:3000/${params.id}.json`);
 
   // const data also needs to be awaited, because it is a promise.
@@ -53,7 +53,7 @@ export async function getStaticPaths() {
   const req = await fetch('http://localhost:3000/cars.json');
   const data = await req.json();
 
-  const paths = data.map(car => {
+  const paths = data.map(({ car }:  {car: Car }) => {
     return { params: { id: car } }
   })
 
