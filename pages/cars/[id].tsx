@@ -3,7 +3,13 @@ import { useRouter } from 'next/router'
 // for SEO, import the Head component, so it is rendered in the HTML.
 import Head from 'next/head'
 
-export default function Car({ car }) {
+interface Car {
+  id: string;
+  color: string;
+  image: string;
+}
+
+export default function Car({ car }: { car: Car }) {
 
   const router = useRouter()
   const { id } = router.query
@@ -13,7 +19,7 @@ export default function Car({ car }) {
       <title>Car with id: {car.id} is {car.color}.</title>
     </Head>
     <h1>{car.id} is {car.color}.</h1>
-    <img src={car.image} />
+    {/* <img src={car.image} />  */}
   </>)
 }
 
